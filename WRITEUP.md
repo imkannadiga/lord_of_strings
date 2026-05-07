@@ -57,7 +57,7 @@ Eval uses `do_sample=False` for both base and trained — capability measurement
 |---|---|---|
 | rank `r` | 8 | Sufficient for a stylistic-shift task. |
 | alpha | 16 | `alpha = 2 * r`, the standard scaling. |
-| target modules | attention + MLP | Attention shapes output mode; MLP shapes the token-level vocabulary needed for the lipogram. |
+| target modules | attention (q,v) + MLP (gate, up and down) | Attention shapes output mode; MLP shapes the token-level vocabulary needed for the lipogram. |
 | dropout | 0.05 | Light regularisation against trajectory collapse under sparse rewards. |
 
 The principle: adapt parameters that govern *behaviour*, leave *factual knowledge* alone, use the smallest rank that supports the task.
